@@ -1,0 +1,26 @@
+interface ParallaxSectionProps {
+  image: string;
+  height?: string;
+  position?: string;
+}
+
+export default function ParallaxSection({
+  image,
+  height = "h-[400px]",
+  position = "center",
+}: ParallaxSectionProps) {
+  return (
+    <section
+      className={`relative ${height} overflow-hidden`}
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundAttachment: "fixed",
+        backgroundPosition: position,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/20" />
+    </section>
+  );
+}
