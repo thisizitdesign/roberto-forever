@@ -2,7 +2,7 @@ import { Flame } from 'lucide-react';
 
 export default function MemorySection() {
   return (
-    <section id="remember" className="scroll-mt-20 bg-stone-950/90 py-24 px-6">
+    <section id="remember" className="bg-stone-950/90 py-24 px-6">
       <div className="mx-auto max-w-3xl text-center">
         <div className="mb-8 flex justify-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-amber-200/20 bg-amber-200/5">

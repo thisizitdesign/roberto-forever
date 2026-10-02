@@ -16,7 +16,7 @@ const updates: UpdateItem[] = [
 
 export default function UpdatesSection() {
   return (
-    <section id="updates" className="scroll-mt-20 bg-stone-900/90 py-24 px-6">
+    <section id="updates" className="bg-stone-900/90 py-24 px-6">
       <div className="mx-auto max-w-4xl">
         <div className="mb-12 text-center">
           <div className="mb-6 flex justify-center">

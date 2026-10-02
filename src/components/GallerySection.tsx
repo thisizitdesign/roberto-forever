@@ -29,7 +29,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <section id="gallery" className="scroll-mt-20 bg-stone-950 px-6 py-24 scroll-mt-16">
+    <section id="gallery" className="bg-stone-950 px-6 py-24">
       <div className="mx-auto max-w-4xl">
         <div className="mb-12 text-center">
           <h2 className="font-serif text-3xl text-stone-100 sm:text-4xl">

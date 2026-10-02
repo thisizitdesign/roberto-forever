@@ -2,7 +2,7 @@ import { Mail, Heart } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-20 bg-stone-950 border-t border-stone-900 px-6 py-16">
+    <footer id="contact" className="bg-stone-950 border-t border-stone-900 px-6 py-16">
       <div className="mx-auto max-w-2xl text-center">
         <div className="mb-6 flex justify-center">
           <div className="flex h-14 w-14 items-center justify-center rounded-full border border-amber-200/20 bg-amber-200/5">
