@@ -4,6 +4,7 @@ const navLinks = [
   { label: 'Remember', href: '#remember' },
   { label: 'Updates', href: '#updates' },
   { label: 'Gallery', href: '#gallery' },
+  { label: 'Journal', href: '#journal' },
   { label: 'Contact', href: '#contact' },
 ];
 
