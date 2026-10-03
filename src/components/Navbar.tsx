@@ -33,7 +33,7 @@ export default function Navbar() {
             scrolled ? 'text-stone-100' : 'text-white/90'
           }`}
         >
-          R. P. Riggio
+          {/* R. P. Riggio */}
         </a>
 
         {/* Desktop links */}

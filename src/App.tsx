@@ -6,6 +6,9 @@ import UpdatesSection from "@/components/UpdatesSection";
 import GallerySection from "@/components/GallerySection";
 import GalleryPhotos from "@/components/GalleryPhotos";
 import GalleryVideos from "@/components/GalleryVideos";
+import Journal from "@/components/Journal";
+import JournalEntry from "@/components/JournalEntry";
+import JournalSection from "@/components/JournalSection";
 import Footer from "@/components/Footer";
 import ParallaxSection from "@/components/ParallaxSectionPages";
 import parallaxImage1 from "@/images/assets/parallax-1.jpg";
@@ -34,7 +37,23 @@ function Home() {
         </div>
       </div>
       <GallerySection />
-      <ParallaxSection image={parallaxImage2} />
+
+      <div
+        className="relative bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: `url(${parallaxImage2})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div className="relative">
+          <JournalSection />
+        </div>
+
+        {/* Blank parallax image row */}
+        <div className="relative h-[400px]" />
+      </div>
+
       <Footer />
     </main>
   );
@@ -47,6 +66,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<GalleryPhotos />} />
         <Route path="/gallery-videos" element={<GalleryVideos />} />
+        <Route path="/journal" element={<Journal />} />
+        <Route path="/journal/:slug" element={<JournalEntry />} />
       </Routes>
     </BrowserRouter>
   );
