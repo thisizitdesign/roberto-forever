@@ -1,14 +1,14 @@
-interface ParallaxSectionProps {
+interface Parallax {
   image: string;
   height?: string;
   position?: string;
 }
 
-export default function ParallaxSection({
+export default function Parallax({
   image,
   height = "h-[400px]",
   position = "center",
-}: ParallaxSectionProps) {
+}: Parallax) {
   return (
     <section
       className={`relative ${height} overflow-hidden`}

@@ -10,15 +10,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <h2 className="font-serif text-2xl text-stone-100 sm:text-3xl">
-          Share a Memory
+        <h2 className="flex items-center justify-center gap-2 font-serif text-2xl text-stone-100 sm:text-3xl">
+          We Will Remember You Forever... Forever Roberto
+          <Heart size={18} fill="currentColor" />
         </h2>
         <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-amber-200/40 to-transparent" />
 
         <p className="mt-6 text-base font-light leading-relaxed text-stone-400">
-          If you have photos, videos, or stories you would like to contribute
-          to this memorial, please reach out. Your memories help keep Roberto's
-          spirit alive.
+          This site is a place for all of us to remember Roberto and share the things that keep his memory alive. If you have an idea for something you'd like to add, an event happening in his honor, or anything else you think belongs here, please reach out. This is a community page, and all ideas are welcome. Roberto was all about community and connection so let's keep his legacy alive together.
         </p>
 
         <a
