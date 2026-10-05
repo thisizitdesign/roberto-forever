@@ -12,7 +12,10 @@ import JournalSection from "@/components/JournalSection";
 import ShareSection from "@/components/ShareSection";
 import SharePhotoForm from "@/components/SharePhotoForm";
 import ShareMemoryForm from "@/components/ShareMemoryForm";
+import Music from "@/components/Music";
 import ShareMusicForm from "@/components/ShareMusicForm";
+import Video from "@/components/Video";
+import ShareVideoForm from "@/components/ShareVideoForm";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import parallaxImage1 from "@/images/assets/parallax-1.jpg";
@@ -71,12 +74,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<GalleryPhotos />} />
-        <Route path="/gallery-videos" element={<GalleryVideos />} />
+        <Route path="/videos" element={<GalleryVideos />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/journal/:slug" element={<JournalEntry />} />
-        <Route path="/share/memory" element={<ShareMemoryForm />} />
         <Route path="/share/photo" element={<SharePhotoForm />} />
+        <Route path="/share/memory" element={<ShareMemoryForm />} />
+        <Route path="/music" element={<Music />} />
         <Route path="/share/music" element={<ShareMusicForm />} />
+        <Route path="/video" element={<Video />} />
+        <Route path="/share/video" element={<ShareVideoForm />} />
       </Routes>
     </BrowserRouter>
   );

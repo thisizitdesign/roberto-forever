@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image, BookOpen, Music } from "lucide-react";
+import { Image, BookOpen, Music, Video } from "lucide-react";
 
 export default function ShareSection() {
   return (
@@ -18,12 +18,13 @@ export default function ShareSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-400">
-            Do you have a photograph, memory, or song that reminds you of
-            Roberto?
+            Do you have a photograph, memory, song, or video that reminds you
+            of Roberto? Content submitted below will populate the sections above.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+          {/* Share a Photo */}
           <Link
             to="/share/photo"
             className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
@@ -44,6 +45,7 @@ export default function ShareSection() {
             </p>
           </Link>
 
+          {/* Share a Memory */}
           <Link
             to="/share/memory"
             className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
@@ -64,6 +66,7 @@ export default function ShareSection() {
             </p>
           </Link>
 
+          {/* Share Music */}
           <Link
             to="/share/music"
             className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
@@ -79,8 +82,30 @@ export default function ShareSection() {
             </h3>
 
             <p className="mt-3 text-sm leading-7 text-stone-500">
-              Share recordings of Roberto's music from a rehearsal, project or a music that you may have been working on with him and tell why it was
-              why it was meaningful.
+              Share recordings of Roberto's music from a rehearsal or project,
+              or music you may have been working on with him, and tell why it
+              was meaningful.
+            </p>
+          </Link>
+
+          {/* Share a Video */}
+          <Link
+            to="/share/video"
+            className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
+          >
+            <Video
+              className="mx-auto text-stone-400 transition group-hover:text-stone-200"
+              size={30}
+              strokeWidth={1.5}
+            />
+
+            <h3 className="mt-5 font-serif text-xl text-stone-200">
+              Share a Video
+            </h3>
+
+            <p className="mt-3 text-sm leading-7 text-stone-500">
+              Share a video that captures a moment, memory, or special time
+              with Roberto.
             </p>
           </Link>
         </div>

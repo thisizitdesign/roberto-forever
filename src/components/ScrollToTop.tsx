@@ -6,10 +6,16 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      const id = decodeURIComponent(hash.slice(1));
+      const hashValue = decodeURIComponent(hash.slice(1));
+
+      const galleryHashes = ["gallery", "gallery-videos", "gallery-music"];
+
+      const targetId = galleryHashes.includes(hashValue)
+        ? "gallery"
+        : hashValue;
 
       requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({
+        document.getElementById(targetId)?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
