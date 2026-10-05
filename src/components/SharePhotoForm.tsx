@@ -125,7 +125,7 @@ export default function SharedPhotoForm() {
               id="description"
               name="description"
               rows={6}
-              placeholder="Tell us about these photographs or the moment they capture..."
+              placeholder="Describe your connection to these photographs or the moment they capture..."
               className="w-full resize-y rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
