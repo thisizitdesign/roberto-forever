@@ -23,7 +23,7 @@ export default function SharedMusicForm() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-stone-400">
-            Share a song that reminds you of Roberto and tell us why it holds
+            Share a song that reminds you of Roberto and tell why it holds
             meaning for you.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function SharedMusicForm() {
               name="name"
               type="text"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -61,7 +61,7 @@ export default function SharedMusicForm() {
               name="relationship"
               type="text"
               placeholder="Friend, family member, colleague, etc."
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function SharedMusicForm() {
               name="email"
               type="email"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
 
             <p className="mt-2 text-xs text-stone-600">
@@ -101,7 +101,7 @@ export default function SharedMusicForm() {
               name="song_title"
               type="text"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -119,7 +119,7 @@ export default function SharedMusicForm() {
               name="artist"
               type="text"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -138,8 +138,8 @@ export default function SharedMusicForm() {
               name="why_meaningful"
               rows={7}
               required
-              placeholder="Tell us about the connection between this song and Roberto..."
-              className="w-full resize-y border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              placeholder="Describe your connection between this song and Roberto..."
+              className="w-full resize-y rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -158,7 +158,7 @@ export default function SharedMusicForm() {
               type="file"
               accept="audio/mpeg,.mp3"
               required
-              className="block w-full cursor-pointer border border-stone-700 bg-stone-900 text-sm text-stone-400 file:mr-4 file:border-0 file:bg-stone-800 file:px-5 file:py-3 file:text-sm file:text-stone-200 hover:file:bg-stone-700"
+              className="block w-full cursor-pointer rounded-lg border border-stone-700 bg-stone-900 text-sm text-stone-400 file:mr-4 file:border-0 file:bg-stone-800 file:px-5 file:py-3 file:text-sm file:text-stone-200 hover:file:bg-stone-700"
             />
 
             <p className="mt-2 text-xs leading-6 text-stone-600">
@@ -180,7 +180,7 @@ export default function SharedMusicForm() {
               name="cover"
               type="file"
               accept="image/jpeg,image/png,image/webp"
-              className="block w-full cursor-pointer border border-stone-700 bg-stone-900 text-sm text-stone-400 file:mr-4 file:border-0 file:bg-stone-800 file:px-5 file:py-3 file:text-sm file:text-stone-200 hover:file:bg-stone-700"
+              className="block w-full cursor-pointer rounded-lg border border-stone-700 bg-stone-900 text-sm text-stone-400 file:mr-4 file:border-0 file:bg-stone-800 file:px-5 file:py-3 file:text-sm file:text-stone-200 hover:file:bg-stone-700"
             />
 
             <p className="mt-2 text-xs leading-6 text-stone-600">
@@ -202,12 +202,12 @@ export default function SharedMusicForm() {
               name="credit_name"
               type="text"
               placeholder="Your name as you would like it displayed"
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
           {/* Permission */}
-          <div className="border border-stone-800 bg-stone-900/50 p-5">
+          <div className="rounded-lg border border-stone-800 bg-stone-900/50 p-5">
             <label className="flex cursor-pointer gap-3">
               <input
                 type="checkbox"
@@ -227,7 +227,7 @@ export default function SharedMusicForm() {
           <div className="pt-4">
             <button
               type="submit"
-              className="border border-stone-500 px-8 py-3 text-sm uppercase tracking-[0.2em] text-stone-200 transition hover:border-stone-300 hover:bg-stone-100 hover:text-stone-950"
+              className="rounded-lg border border-stone-500 px-8 py-3 text-sm uppercase tracking-[0.2em] text-stone-200 transition hover:border-stone-300 hover:bg-stone-100 hover:text-stone-950"
             >
               Submit Music
             </button>

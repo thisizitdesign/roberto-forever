@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-amber-200/40 to-transparent" />
 
         <p className="mt-6 text-base font-light leading-relaxed text-stone-400">
-          This site is a place for all of us to remember Roberto and share the things that keep his memory alive. If you have an idea for something you'd like to add, an event happening in his honor, or anything else you think belongs here, please reach out. This is a community page, and all ideas are welcome. Roberto was all about community and connection so let's keep his legacy alive together.
+          This site is a place for anyone who Roberto's life has touched, and a place to share the things that keep his memory alive. If you have an idea for something you'd like to add, an event happening in his honor, or anything else you think belongs on this site, please reach out. This is a community page, and all ideas are welcome. Roberto was all about community and connection so let's keep his legacy alive together.
         </p>
 
         <a

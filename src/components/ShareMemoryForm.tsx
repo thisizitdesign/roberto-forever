@@ -43,7 +43,7 @@ export default function ShareMemoryForm() {
               name="name"
               type="text"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -61,7 +61,7 @@ export default function ShareMemoryForm() {
               name="relationship"
               type="text"
               placeholder="Friend, family member, colleague, etc."
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function ShareMemoryForm() {
               name="email"
               type="email"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
 
             <p className="mt-2 text-xs text-stone-600">
@@ -101,7 +101,7 @@ export default function ShareMemoryForm() {
               name="title"
               type="text"
               placeholder="Give your memory a title"
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -120,7 +120,7 @@ export default function ShareMemoryForm() {
               rows={10}
               required
               placeholder="Share your story..."
-              className="w-full resize-y border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full resize-y rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -138,7 +138,7 @@ export default function ShareMemoryForm() {
               name="approximate_date"
               type="text"
               placeholder="For example: Summer 2019, his birthday, a concert, etc."
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -156,12 +156,12 @@ export default function ShareMemoryForm() {
               name="credit_name"
               type="text"
               placeholder="Your name as you would like it displayed"
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
           {/* Permission */}
-          <div className="border border-stone-800 bg-stone-900/50 p-5">
+          <div className="rounded-lg border border-stone-800 bg-stone-900/50 p-5">
             <label className="flex cursor-pointer gap-3">
               <input
                 type="checkbox"
@@ -181,7 +181,7 @@ export default function ShareMemoryForm() {
           <div className="pt-4">
             <button
               type="submit"
-              className="border border-stone-500 px-8 py-3 text-sm uppercase tracking-[0.2em] text-stone-200 transition hover:border-stone-300 hover:bg-stone-100 hover:text-stone-950"
+              className="rounded-lg border border-stone-500 px-8 py-3 text-sm uppercase tracking-[0.2em] text-stone-200 transition hover:border-stone-300 hover:bg-stone-100 hover:text-stone-950"
             >
               Submit Memory
             </button>

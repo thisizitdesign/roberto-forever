@@ -43,7 +43,7 @@ export default function SharedPhotoForm() {
               name="name"
               type="text"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -61,7 +61,7 @@ export default function SharedPhotoForm() {
               name="relationship"
               type="text"
               placeholder="Friend, family member, colleague, etc."
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function SharedPhotoForm() {
               name="email"
               type="email"
               required
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 outline-none transition focus:border-stone-400"
             />
 
             <p className="mt-2 text-xs text-stone-600">
@@ -103,11 +103,11 @@ export default function SharedPhotoForm() {
               accept="image/jpeg,image/png,image/webp,image/heic"
               multiple
               required
-              className="block w-full cursor-pointer border border-stone-700 bg-stone-900 text-sm text-stone-400 file:mr-4 file:border-0 file:bg-stone-800 file:px-5 file:py-3 file:text-sm file:text-stone-200 hover:file:bg-stone-700"
+              className="block w-full cursor-pointer rounded-lg border border-stone-700 bg-stone-900 text-sm text-stone-400 file:mr-4 file:border-0 file:bg-stone-800 file:px-5 file:py-3 file:text-sm file:text-stone-200 hover:file:bg-stone-700"
             />
 
             <p className="mt-2 text-xs leading-6 text-stone-600">
-              You can select multiple photos. JPG, PNG, WebP, and HEIC images
+              You can select multiple photos. JPG, PNG, WebP, AVIF, and HEIC images
               are accepted.
             </p>
           </div>
@@ -126,7 +126,7 @@ export default function SharedPhotoForm() {
               name="description"
               rows={6}
               placeholder="Tell us about these photographs or the moment they capture..."
-              className="w-full resize-y border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full resize-y rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -144,7 +144,7 @@ export default function SharedPhotoForm() {
               name="approximate_date"
               type="text"
               placeholder="For example: Summer 2019, his birthday, a concert, etc."
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
@@ -162,12 +162,12 @@ export default function SharedPhotoForm() {
               name="credit_name"
               type="text"
               placeholder="Your name as you would like it displayed"
-              className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-4 py-3 text-stone-100 placeholder:text-stone-600 outline-none transition focus:border-stone-400"
             />
           </div>
 
           {/* Permission */}
-          <div className="border border-stone-800 bg-stone-900/50 p-5">
+          <div className="rounded-lg border border-stone-800 bg-stone-900/50 p-5">
             <label className="flex cursor-pointer gap-3">
               <input
                 type="checkbox"
@@ -187,7 +187,7 @@ export default function SharedPhotoForm() {
           <div className="pt-4">
             <button
               type="submit"
-              className="border border-stone-500 px-8 py-3 text-sm uppercase tracking-[0.2em] text-stone-200 transition hover:border-stone-300 hover:bg-stone-100 hover:text-stone-950"
+              className="rounded-lg border border-stone-500 px-8 py-3 text-sm uppercase tracking-[0.2em] text-stone-200 transition hover:border-stone-300 hover:bg-stone-100 hover:text-stone-950"
             >
               Submit Photos
             </button>

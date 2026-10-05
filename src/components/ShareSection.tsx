@@ -14,19 +14,19 @@ export default function ShareSection() {
           </p>
 
           <h2 className="mt-4 font-serif text-3xl font-light tracking-wide sm:text-4xl">
-            Share with Us
+            Share with the Community
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-400">
             Do you have a photograph, memory, or song that reminds you of
-            Roberto? We would love for you to share it with us.
+            Roberto?
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           <Link
             to="/share/photo"
-            className="group border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
+            className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
           >
             <Image
               className="mx-auto text-stone-400 transition group-hover:text-stone-200"
@@ -46,7 +46,7 @@ export default function ShareSection() {
 
           <Link
             to="/share/memory"
-            className="group border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
+            className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
           >
             <BookOpen
               className="mx-auto text-stone-400 transition group-hover:text-stone-200"
@@ -60,13 +60,13 @@ export default function ShareSection() {
 
             <p className="mt-3 text-sm leading-7 text-stone-500">
               Tell a story or share a moment about Roberto that you would like
-              others to remember.
+              to be remembered.
             </p>
           </Link>
 
           <Link
             to="/share/music"
-            className="group border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
+            className="group rounded-lg border border-stone-800 bg-stone-900/50 p-8 text-center transition hover:border-stone-600 hover:bg-stone-900"
           >
             <Music
               className="mx-auto text-stone-400 transition group-hover:text-stone-200"
@@ -79,8 +79,8 @@ export default function ShareSection() {
             </h3>
 
             <p className="mt-3 text-sm leading-7 text-stone-500">
-              Share a song that reminds you of Roberto and tell us why it was
-              meaningful.
+              Share recordings of Roberto's music from a rehearsal, project or a music that you may have been working on with him and tell why it was
+              why it was meaningful.
             </p>
           </Link>
         </div>

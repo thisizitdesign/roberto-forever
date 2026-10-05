@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Masonry from "react-masonry-css";
 import { Users, Heart, Music, X, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,6 +25,17 @@ const friendsImages = Object.values(
   ),
 );
 
+const atashImages = Object.values(
+  import.meta.glob<string>(
+    "../images/gallery/photos/atash/*.{jpg,jpeg,png,webp,avif}",
+    {
+      eager: true,
+      query: "?url",
+      import: "default",
+    },
+  ),
+);
+
 const musicImages = Object.values(
   import.meta.glob<string>(
     "../images/gallery/photos/music/*.{jpg,jpeg,png,webp,avif}",
@@ -35,20 +47,22 @@ const musicImages = Object.values(
   ),
 );
 
-export default function GalleryPhotos() {
-const navigate = useNavigate();
+const robertoImages = Object.values(
+  import.meta.glob<string>(
+    "../images/gallery/photos/roberto/*.{jpg,jpeg,png,webp,avif}",
+    {
+      eager: true,
+      query: "?url",
+      import: "default",
+    },
+  ),
+);
 
-const backToGallery = () => {
-  navigate("/");
-  setTimeout(() => {
-    document.getElementById("gallery")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }, 100);
-};
-  const [category, setCategory] = useState<"family" | "friends" | "music">(
-    "family",
-  );
+export default function GalleryPhotos() {
+  const navigate = useNavigate();
+
+  const [category, setCategory] = useState<
+    "family" | "friends" | "atash" | "music" | "roberto">("family");
 
   const [lightbox, setLightbox] = useState<string | null>(null);
 
@@ -57,18 +71,41 @@ const backToGallery = () => {
       ? familyImages
       : category === "friends"
         ? friendsImages
-        : musicImages;
+        : category === "atash"
+          ? atashImages
+          : category === "music"
+            ? musicImages
+            : robertoImages;
+
+  const backToGallery = () => {
+    navigate("/");
+
+    setTimeout(() => {
+      document.getElementById("gallery")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
+  const breakpointColumnsObj = {
+    default: 3,
+    1024: 2,
+    640: 1,
+  };
 
   return (
     <section className="min-h-screen bg-stone-950 px-6 py-24">
       <div className="mx-auto max-w-6xl">
-      <button
-        onClick={backToGallery}
-        className="mb-8 flex items-center gap-2 text-sm font-light tracking-wide text-amber-200/70 transition-colors hover:text-amber-100"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to Gallery
-      </button>
+
+        {/* Back to Gallery */}
+        <button
+          onClick={backToGallery}
+          className="mb-8 flex items-center gap-2 text-sm font-light tracking-wide text-amber-200/70 transition-colors hover:text-amber-100"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Gallery
+        </button>
+
         {/* Header */}
         <div className="mb-12 text-center">
           <h1 className="font-serif text-4xl text-stone-100 sm:text-5xl">
@@ -84,6 +121,8 @@ const backToGallery = () => {
 
         {/* Category buttons */}
         <div className="mb-12 flex flex-wrap justify-center gap-4">
+
+          {/* Family */}
           <button
             onClick={() => setCategory("family")}
             className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
@@ -92,10 +131,11 @@ const backToGallery = () => {
                 : "text-stone-500 hover:text-stone-300"
             }`}
           >
-            <Users className="h-4 w-4" />
+            <Heart className="h-4 w-4" />
             Family
           </button>
 
+          {/* Friends */}
           <button
             onClick={() => setCategory("friends")}
             className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
@@ -104,10 +144,23 @@ const backToGallery = () => {
                 : "text-stone-500 hover:text-stone-300"
             }`}
           >
-            <Heart className="h-4 w-4" />
+            <Users className="h-4 w-4" />
             Friends
           </button>
 
+          {/* Atash */}
+          <button
+            onClick={() => setCategory("atash")}
+            className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
+              category === "atash"
+                ? "bg-amber-200/15 text-amber-100 ring-1 ring-amber-200/30"
+                : "text-stone-500 hover:text-stone-300"
+            }`}          >
+            <Music className="h-4 w-4" />
+            Atash
+          </button>
+
+          {/* Music */}
           <button
             onClick={() => setCategory("music")}
             className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
@@ -119,25 +172,42 @@ const backToGallery = () => {
             <Music className="h-4 w-4" />
             Music
           </button>
+
+          {/* Roberto */}
+          <button
+            onClick={() => setCategory("roberto")}
+            className={`flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-medium transition-all ${
+              category === "roberto"
+                ? "bg-amber-200/15 text-amber-100 ring-1 ring-amber-200/30"
+                : "text-stone-500 hover:text-stone-300"
+            }`}          >
+            <Heart className="h-4 w-4" />
+            Roberto
+          </button>
+
         </div>
 
-        {/* Masonry image grid */}
+        {/* Masonry Gallery */}
         {images.length > 0 ? (
-          <div className="columns-1 gap-6 sm:columns-2 lg:columns-3">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="flex w-auto -ml-6"
+            columnClassName="pl-6 bg-clip-padding"
+          >
             {images.map((image, index) => (
               <button
                 key={image}
                 onClick={() => setLightbox(image)}
-                className="group mb-6 block w-full break-inside-avoid overflow-hidden rounded-lg"
+                className="group mb-6 block w-full overflow-hidden rounded-lg"
               >
                 <img
                   src={image}
                   alt={`${category} memory ${index + 1}`}
-                  className="block w-full transition-transform duration-700 group-hover:scale-[1.02]"
+                  className="block h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]"
                 />
               </button>
             ))}
-          </div>
+          </Masonry>
         ) : (
           <div className="py-24 text-center">
             <p className="text-sm font-light text-stone-600">
@@ -145,6 +215,7 @@ const backToGallery = () => {
             </p>
           </div>
         )}
+
       </div>
 
       {/* Lightbox */}
