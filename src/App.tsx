@@ -16,6 +16,7 @@ import Music from "@/components/Music";
 import ShareMusicForm from "@/components/ShareMusicForm";
 import Video from "@/components/Video";
 import ShareVideoForm from "@/components/ShareVideoForm";
+import Review from "@/components/Review";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import parallaxImage1 from "@/images/assets/parallax-1.jpg";
@@ -83,6 +84,7 @@ function App() {
         <Route path="/share/music" element={<ShareMusicForm />} />
         <Route path="/video" element={<Video />} />
         <Route path="/share/video" element={<ShareVideoForm />} />
+        <Route path="/review" element={<Review />} />
       </Routes>
     </BrowserRouter>
   );
