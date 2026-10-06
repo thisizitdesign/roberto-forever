@@ -22,7 +22,24 @@ const galleryVideos = import.meta.glob<string>(
   },
 );
 
-const videos = Object.values(galleryVideos);
+const videos = Object.entries(galleryVideos).map(
+  ([path, videoUrl], index) => ({
+    id: `home-video-${index}`,
+    title:
+      path
+        .split("/")
+        .pop()
+        ?.replace(/\.[^/.]+$/, "")
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, (letter) => letter.toUpperCase()) ??
+      "Untitled",
+    band: "",
+    songTitle: "",
+    venue: "",
+    show: "",
+    videoUrl,
+  }),
+);
 
 const galleryMusic = import.meta.glob<string>(
   "../images/gallery/music/home/*.{mp3,wav,m4a,ogg}",
@@ -68,7 +85,10 @@ export default function GallerySection() {
   }, []);
 
   return (
-    <section id="gallery" className="bg-stone-950 px-6 py-24">
+    <section
+      id="gallery"
+      className="bg-stone-950 px-6 py-24"
+    >
       <div className="mx-auto max-w-4xl">
 
         {/* Header */}
@@ -161,17 +181,59 @@ export default function GallerySection() {
           <>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
               {videos.slice(0, 3).map((video) => (
-                <div
-                  key={video}
-                  className="overflow-hidden rounded-lg bg-black"
+                <Link
+                  key={video.id}
+                  to="/video"
+                  className="group block overflow-hidden rounded-lg border border-stone-800 bg-stone-900/40 transition-all hover:border-stone-700 hover:bg-stone-900"
                 >
-                  <video
-                    src={video}
-                    controls
-                    preload="metadata"
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
+                  {/* Video */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-black">
+                    <video
+                      src={video.videoUrl}
+                      controls
+                      preload="metadata"
+                      className="h-full w-full object-cover"
+                      onClick={(event) => event.preventDefault()}
+                    />
+                  </div>
+
+                  {/* Video Information */}
+                  <div className="min-h-[185px] p-5">
+                    <h3 className="font-serif text-lg text-stone-200">
+                      {video.title}
+                    </h3>
+
+                    <div className="mt-4 space-y-1.5 text-xs text-stone-500">
+                      <p>
+                        <span className="text-stone-600">
+                          Band:
+                        </span>{" "}
+                        {video.band || "Not added yet"}
+                      </p>
+
+                      <p>
+                        <span className="text-stone-600">
+                          Song:
+                        </span>{" "}
+                        {video.songTitle || "Not added yet"}
+                      </p>
+
+                      <p>
+                        <span className="text-stone-600">
+                          Venue:
+                        </span>{" "}
+                        {video.venue || "Not added yet"}
+                      </p>
+
+                      <p>
+                        <span className="text-stone-600">
+                          Show:
+                        </span>{" "}
+                        {video.show || "Not added yet"}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
 

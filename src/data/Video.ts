@@ -12,7 +12,8 @@ export interface VideoItem {
   band?: string;
   ensemble?: string;
   project?: string;
-  showLocation?: string;
+  venue?: string;
+  show?: string;
   location?: string;
   uploadedBy?: string;
   members?: string;
@@ -27,7 +28,6 @@ const atashVideos = import.meta.glob<string>(
     import: "default",
   },
 );
-console.log("ATASH VIDEOS:", atashVideos);
 
 const otherBandVideos = import.meta.glob<string>(
   "../images/gallery/videos/otherBands/*.{mp4,mov,webm}",
@@ -56,70 +56,54 @@ const rehearsalVideos = import.meta.glob<string>(
   },
 );
 
-function createVideo(
-  path: string,
-  videoUrl: string,
-  category: VideoCategory,
-  index: number,
-): VideoItem {
-  const filename = path.split("/").pop() ?? "Untitled";
-
-  const title = filename
-    .replace(/\.[^/.]+$/, "")
-    .replace(/[-_]+/g, " ")
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
-
-  const categoryDescriptions: Record<VideoCategory, string> = {
-    atash: "Name of show and location",
-    otherBands: "A performance or recording from Roberto's musical work.",
-    withDancers: "A performance shared with dancers.",
-    rehearsals: "A rehearsal capturing Roberto's creative process.",
-  };
-
-  const categoryCredits: Record<VideoCategory, string> = {
-    atash: "Atash",
-    otherBands: "Roberto & Friends",
-    withDancers: "Roberto & Dancers",
-    rehearsals: "Roberto",
-  };
-
-return {
-  id: `${category}-${filename}-${index}`,
-  title,
-  songTitle: "",
-  category,
-  band: category === "atash" ? "Atash" : "",
-  ensemble: "",
-  project: "",
-  showLocation: "",
-  location: "",
-  uploadedBy: "",
-  members: "",
-  videoUrl,
-};
+function getTitle(path: string) {
+  return (
+    path
+      .split("/")
+      .pop()
+      ?.replace(/\.[^/.]+$/, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\b\w/g, (letter) => letter.toUpperCase()) ?? "Untitled"
+  );
 }
 
-const atash = Object.entries(atashVideos).map(([path, videoUrl], index) =>
-  createVideo(path, videoUrl, "atash", index),
-);
-
-const otherBands = Object.entries(otherBandVideos).map(
-  ([path, videoUrl], index) => createVideo(path, videoUrl, "otherBands", index),
-);
-
-const withDancers = Object.entries(dancerVideos).map(
-  ([path, videoUrl], index) =>
-    createVideo(path, videoUrl, "withDancers", index),
-);
-
-const rehearsals = Object.entries(rehearsalVideos).map(
-  ([path, videoUrl], index) => createVideo(path, videoUrl, "rehearsals", index),
-);
+function createVideo(
+  category: VideoCategory,
+  path: string,
+  videoUrl: string,
+  index: number,
+): VideoItem {
+  return {
+    id: `${category}-${index}`,
+    title: getTitle(path),
+    category,
+    songTitle: "",
+    band: "",
+    ensemble: "",
+    project: "",
+    venue: "",
+    show: "",
+    location: "",
+    uploadedBy: "",
+    members: "",
+    videoUrl,
+  };
+}
 
 export const videoItems: VideoItem[] = [
-  ...atash,
-  ...otherBands,
-  ...withDancers,
-  ...rehearsals,
+  ...Object.entries(atashVideos).map(([path, videoUrl], index) =>
+    createVideo("atash", path, videoUrl, index),
+  ),
+
+  ...Object.entries(otherBandVideos).map(([path, videoUrl], index) =>
+    createVideo("otherBands", path, videoUrl, index),
+  ),
+
+  ...Object.entries(dancerVideos).map(([path, videoUrl], index) =>
+    createVideo("withDancers", path, videoUrl, index),
+  ),
+
+  ...Object.entries(rehearsalVideos).map(([path, videoUrl], index) =>
+    createVideo("rehearsals", path, videoUrl, index),
+  ),
 ];
-console.log("VIDEO ITEMS:", videoItems);
