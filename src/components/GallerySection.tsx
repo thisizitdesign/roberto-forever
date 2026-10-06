@@ -99,7 +99,7 @@ export default function GallerySection() {
 
           <div className="mx-auto mt-6 h-px w-32 bg-gradient-to-r from-transparent via-amber-200/40 to-transparent" />
 
-          <p className="mt-6 text-sm font-light text-stone-500">
+          <p className="mt-6 text-sm font-light text-stone-400">
             A collection of photos, videos, and music honoring
             Roberto's memory.
           </p>

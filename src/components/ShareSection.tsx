@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
-import { Image, BookOpen, Music, Video } from "lucide-react";
+import {
+  Image,
+  BookOpen,
+  Music,
+  Video,
+  Share2,
+} from "lucide-react";
 
 export default function ShareSection() {
   return (
@@ -24,6 +30,7 @@ export default function ShareSection() {
         </div>
 
         <div className="mx-auto mt-14 grid max-w-4xl gap-6 md:grid-cols-2">
+
           {/* Share a Photo */}
           <Link
             to="/share/photo"
@@ -39,10 +46,15 @@ export default function ShareSection() {
               Share a Photo
             </h3>
 
-            <p className="mt-3 text-sm leading-7 text-stone-500">
+            <p className="mt-3 text-sm leading-7 text-stone-400">
               Share a photograph or collection of photographs that captures a
               moment with Roberto.
             </p>
+
+            <span className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200/20 bg-amber-200/5 px-5 py-2.5 text-sm font-light tracking-wide text-amber-200/80 transition group-hover:border-amber-200/40 group-hover:bg-amber-200/10 group-hover:text-amber-100">
+              <Share2 className="h-4 w-4" />
+              Share a Photo
+            </span>
           </Link>
 
           {/* Share a Memory */}
@@ -60,10 +72,15 @@ export default function ShareSection() {
               Share a Memory
             </h3>
 
-            <p className="mt-3 text-sm leading-7 text-stone-500">
+            <p className="mt-3 text-sm leading-7 text-stone-400">
               Tell a story or share a moment about Roberto that you would like
               to be remembered.
             </p>
+
+            <span className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200/20 bg-amber-200/5 px-5 py-2.5 text-sm font-light tracking-wide text-amber-200/80 transition group-hover:border-amber-200/40 group-hover:bg-amber-200/10 group-hover:text-amber-100">
+              <Share2 className="h-4 w-4" />
+              Share a Memory
+            </span>
           </Link>
 
           {/* Share Music */}
@@ -81,11 +98,16 @@ export default function ShareSection() {
               Share Music
             </h3>
 
-            <p className="mt-3 text-sm leading-7 text-stone-500">
+            <p className="mt-3 text-sm leading-7 text-stone-400">
               Share recordings of Roberto's music from a rehearsal or project,
               or music you may have been working on with him, and tell why it
               was meaningful.
             </p>
+
+            <span className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200/20 bg-amber-200/5 px-5 py-2.5 text-sm font-light tracking-wide text-amber-200/80 transition group-hover:border-amber-200/40 group-hover:bg-amber-200/10 group-hover:text-amber-100">
+              <Share2 className="h-4 w-4" />
+              Share Music
+            </span>
           </Link>
 
           {/* Share a Video */}
@@ -103,11 +125,17 @@ export default function ShareSection() {
               Share a Video
             </h3>
 
-            <p className="mt-3 text-sm leading-7 text-stone-500">
+            <p className="mt-3 text-sm leading-7 text-stone-400">
               Share a video that captures a moment, memory, or special time
               with Roberto.
             </p>
+
+            <span className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border border-amber-200/20 bg-amber-200/5 px-5 py-2.5 text-sm font-light tracking-wide text-amber-200/80 transition group-hover:border-amber-200/40 group-hover:bg-amber-200/10 group-hover:text-amber-100">
+              <Share2 className="h-4 w-4" />
+              Share a Video
+            </span>
           </Link>
+
         </div>
       </div>
     </section>
