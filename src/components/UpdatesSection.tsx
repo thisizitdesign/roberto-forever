@@ -8,8 +8,8 @@ const updates = [
     date: "October 26, 2026",
     title: "Celebration of Life for Roberto Riggio",
     time: "7:00–10:00 PM",
-    location: "Sahara Lounge • Austin, TX",
-    body: "An evening of remembrance and celebration of Roberto's life, with family and friends sharing memories, speeches, and recordings of Roberto's music, followed by a community jam session.",
+    location: "Sahara Lounge",
+    body: "An evening of remembrance and celebration of Roberto's life, with family and friends sharing memories, followed by a community jam session.",
     image: new URL(
       "../images/updates/memorial-oct26-eventbrite.webp",
       import.meta.url,
