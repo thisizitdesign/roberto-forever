@@ -8,13 +8,12 @@ export interface VideoItem {
   id: string;
   title: string;
   category: VideoCategory;
-  songTitle: string;
+  songTitle?: string;
   band?: string;
   ensemble?: string;
   project?: string;
   venue?: string;
   show?: string;
-  location?: string;
   uploadedBy?: string;
   members?: string;
   videoUrl: string;
@@ -83,7 +82,6 @@ function createVideo(
     project: "",
     venue: "",
     show: "",
-    location: "",
     uploadedBy: "",
     members: "",
     videoUrl,

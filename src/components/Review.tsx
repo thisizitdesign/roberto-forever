@@ -273,7 +273,7 @@ export default function Review() {
             </ul>
 
             <p className="mt-4 text-sm leading-8 text-stone-200">
-              Each video card displays its title and the relevant information
+              Each video card displays its title and the relevant information (if it is left empty on the form it won't show up on the card - same for the music card)
               for that category.
             </p>
           </div>

@@ -211,41 +211,11 @@ export default function GallerySection() {
                     </div>
                   </div>
 
-                  {/* Video Information */}
-                  <div className="min-h-[185px] p-5">
+                  {/* Video Title */}
+                  <div className="p-5">
                     <h3 className="font-serif text-lg text-stone-200">
                       {video.title}
                     </h3>
-
-                    <div className="mt-4 space-y-1.5 text-xs text-stone-500">
-                      <p>
-                        <span className="text-stone-600">
-                          Band:
-                        </span>{" "}
-                        {video.band || "Not added yet"}
-                      </p>
-
-                      <p>
-                        <span className="text-stone-600">
-                          Song:
-                        </span>{" "}
-                        {video.songTitle || "Not added yet"}
-                      </p>
-
-                      <p>
-                        <span className="text-stone-600">
-                          Venue:
-                        </span>{" "}
-                        {video.venue || "Not added yet"}
-                      </p>
-
-                      <p>
-                        <span className="text-stone-600">
-                          Show:
-                        </span>{" "}
-                        {video.show || "Not added yet"}
-                      </p>
-                    </div>
                   </div>
                 </button>
               ))}
@@ -306,23 +276,11 @@ export default function GallerySection() {
                     </div>
                   </div>
 
-                  {/* Song Information */}
-                  <div className="min-h-[145px] p-5">
+                  {/* Song Title */}
+                  <div className="p-5">
                     <h3 className="font-serif text-lg text-stone-200">
                       {track.title}
                     </h3>
-
-                    <p className="mt-2 text-xs uppercase tracking-[0.2em] text-stone-600">
-                      Music
-                    </p>
-
-                    <p className="mt-4 text-xs text-stone-500">
-                      About: Not added yet
-                    </p>
-
-                    <p className="mt-2 text-xs text-stone-600">
-                      Uploaded by: Not added yet
-                    </p>
                   </div>
                 </Link>
               ))}
