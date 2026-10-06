@@ -72,6 +72,9 @@ export default function GallerySection() {
   const [lightbox, setLightbox] =
     useState<string | null>(null);
 
+  const [selectedVideo, setSelectedVideo] =
+    useState<(typeof videos)[number] | null>(null);
+
   useEffect(() => {
     const hash = window.location.hash;
 
@@ -181,20 +184,31 @@ export default function GallerySection() {
           <>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
               {videos.slice(0, 3).map((video) => (
-                <Link
+                <button
                   key={video.id}
-                  to="/video"
-                  className="group block overflow-hidden rounded-lg border border-stone-800 bg-stone-900/40 transition-all hover:border-stone-700 hover:bg-stone-900"
+                  type="button"
+                  onClick={() => setSelectedVideo(video)}
+                  className="group block w-full overflow-hidden rounded-lg border border-stone-800 bg-stone-900/40 text-left transition-all hover:border-stone-700 hover:bg-stone-900"
                 >
                   {/* Video */}
                   <div className="relative aspect-[4/3] overflow-hidden bg-black">
                     <video
                       src={video.videoUrl}
-                      controls
                       preload="metadata"
+                      muted
+                      playsInline
                       className="h-full w-full object-cover"
-                      onClick={(event) => event.preventDefault()}
                     />
+
+                    {/* Play Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors group-hover:bg-black/30">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black/70 text-stone-100 shadow-lg transition-transform duration-300 group-hover:scale-110">
+                        <Play
+                          className="ml-1 h-7 w-7"
+                          fill="currentColor"
+                        />
+                      </div>
+                    </div>
                   </div>
 
                   {/* Video Information */}
@@ -233,7 +247,7 @@ export default function GallerySection() {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </button>
               ))}
             </div>
 
@@ -334,7 +348,7 @@ export default function GallerySection() {
         )}
       </div>
 
-      {/* Lightbox */}
+      {/* Image Lightbox */}
       {lightbox && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-6"
@@ -352,6 +366,68 @@ export default function GallerySection() {
             alt="Memorial tribute"
             className="max-h-full max-w-full rounded-lg object-contain"
           />
+        </div>
+      )}
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 z-50 overflow-y-auto bg-black/90 p-4 sm:p-8"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="mx-auto flex min-h-full max-w-5xl items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="relative w-full overflow-hidden rounded-xl border border-stone-800 bg-stone-950 shadow-2xl">
+              <button
+                type="button"
+                onClick={() => setSelectedVideo(null)}
+                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-stone-300 transition hover:bg-black hover:text-white"
+                aria-label="Close video"
+              >
+                <X className="h-5 w-5" />
+              </button>
+
+              <div className="bg-black">
+                <video
+                  src={selectedVideo.videoUrl}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="max-h-[70vh] w-full object-contain"
+                />
+              </div>
+
+              <div className="p-6 sm:p-8">
+                <h2 className="font-serif text-2xl text-stone-100 sm:text-3xl">
+                  {selectedVideo.title}
+                </h2>
+
+                <div className="mt-5 space-y-2 text-sm">
+                  <p className="text-stone-400">
+                    <span className="text-stone-600">Band:</span>{" "}
+                    {selectedVideo.band || "Not added yet"}
+                  </p>
+
+                  <p className="text-stone-400">
+                    <span className="text-stone-600">Song:</span>{" "}
+                    {selectedVideo.songTitle || "Not added yet"}
+                  </p>
+
+                  <p className="text-stone-400">
+                    <span className="text-stone-600">Venue:</span>{" "}
+                    {selectedVideo.venue || "Not added yet"}
+                  </p>
+
+                  <p className="text-stone-400">
+                    <span className="text-stone-600">Show:</span>{" "}
+                    {selectedVideo.show || "Not added yet"}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </section>
